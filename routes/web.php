@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/login', 'Auth\LoginController@view')->name('login');
 Route::post('/login', 'Auth\LoginController@login')->name('login.post');
+Route::get('token', 'Api\TokenController@appToken')->name('app.token');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

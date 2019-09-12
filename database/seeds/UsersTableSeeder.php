@@ -13,9 +13,10 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'admin',
-            'email' => 'admin@tabbysurprises.com',
-            'password' => bcrypt('8^bwSj31'),
+            'name' => 'Admin User ' . uniqid(),
+            'email' => uniqid('admin') . '@tabbysurprises.com',
+            'api_token' => md5(uniqid(bcrypt('password@123'))),
+            'password' => bcrypt('password@123'),
         ]);
     }
 }
