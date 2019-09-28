@@ -7,63 +7,45 @@
       -->
         <div class="logo">
             <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                Creative Tim
+                Tabby Surprises
             </a>
         </div>
         <div class="sidebar-wrapper">
             <ul class="nav">
                 <li class="nav-item {{url()->current() == route('dashboard') ? 'active' : ''}}">
-                    <a class="nav-link" href="./dashboard.html">
+                    <a class="nav-link" href="{{route('dashboard')}}">
                         <i class="material-icons">dashboard</i>
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./user.html">
-                        <i class="material-icons">person</i>
-                        <p>User Profile</p>
+                <li class="nav-item {{url()->current() == route('orders.paid') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('orders.paid')}}">
+                        <i class="material-icons">notification_important</i>
+                        <p>Paid / Incoming Orders </p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./tables.html">
-                        <i class="material-icons">content_paste</i>
-                        <p>Table List</p>
+                <li class="nav-item {{url()->current() == route('orders.pending') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('orders.pending')}}">
+                        <i class="material-icons">list</i>
+                        <p>Pending Orders</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./typography.html">
-                        <i class="material-icons">library_books</i>
-                        <p>Typography</p>
+                <li class="nav-item {{url()->current() == route('orders.accepted') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('orders.accepted')}}">
+                        <i class="material-icons">list</i>
+                        <p>Accepted Orders</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./icons.html">
-                        <i class="material-icons">bubble_chart</i>
-                        <p>Icons</p>
+                <li class="nav-item {{url()->current() == route('orders.rejected') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('orders.rejected')}}">
+                        <i class="material-icons">warning</i>
+                        <p>Rejected Orders</p>
                     </a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./map.html">
-                        <i class="material-icons">location_ons</i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./notifications.html">
-                        <i class="material-icons">notifications</i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="./rtl.html">
-                        <i class="material-icons">language</i>
-                        <p>RTL Support</p>
-                    </a>
-                </li>
-                <li class="nav-item active-pro ">
-                    <a class="nav-link" href="./upgrade.html">
-                        <i class="material-icons">unarchive</i>
-                        <p>Upgrade to PRO</p>
+                <li class="nav-item {{url()->current() == route('orders.completed') ? 'active' : ''}}">
+                    <a class="nav-link" href="{{route('orders.completed')}}">
+                        <i class="material-icons">done</i>
+                        <p>Completed Orders</p>
                     </a>
                 </li>
             </ul>

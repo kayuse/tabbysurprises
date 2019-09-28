@@ -17,8 +17,14 @@ Route::get('/', function () {
 
 Route::get('/login', 'Auth\LoginController@view')->name('login');
 Route::post('/login', 'Auth\LoginController@login')->name('login.post');
-Route::get('token', 'Api\TokenController@appToken')->name('app.token');
+Route::get('api/token', 'Api\TokenController@appToken')->name('app.token');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('/orders', 'OrderController@index')->name('orders');
+    Route::get('/orders/pending', 'OrderController@pending')->name('orders.pending');
+    Route::get('/orders/accepted', 'OrderController@accepted')->name('orders.accepted');
+    Route::get('/orders/rejected', 'OrderController@rejected')->name('orders.rejected');
+    Route::get('/orders/paid', 'OrderController@paid')->name('orders.paid');
+    Route::get('/orders/completed', 'OrderController@completed')->name('orders.completed');
 });
