@@ -56,7 +56,8 @@
                                                     {{$order->celebration_type}}
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-facebook btn-sm">More... > </a>
+                                                    <a href="{{route('order',['id'=>$order->id])}}"
+                                                       class="btn btn-facebook btn-sm">More... > </a>
                                                 </td>
                                             </tr>
                                         @endforeach

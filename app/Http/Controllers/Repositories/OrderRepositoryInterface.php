@@ -10,6 +10,10 @@ namespace App\Http\Controllers\Repositories;
 interface OrderRepositoryInterface
 {
     public function create($data);
+
     public function get($id);
+
     public function all();
+
+    public function confirm($id, $amount);
 }

@@ -18,10 +18,15 @@
     <link href="{{ asset('css/material-dashboard.min.css?v=2.1.1')}}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="{{ asset('css/demo.css')}}" rel="stylesheet"/>
+    @yield('style')
 </head>
 <body>
 @include('layouts.sidebar')
 @yield('content')
+<script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+@yield('scripts')
 </body>
-
 </html>

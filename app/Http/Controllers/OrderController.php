@@ -48,4 +48,6 @@ class OrderController extends Controller
         $data = compact('orders');
         return view('orders_completed', $data);
     }
+
+
 }

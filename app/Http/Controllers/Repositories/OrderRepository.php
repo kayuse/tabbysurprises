@@ -43,6 +43,15 @@ class OrderRepository implements OrderRepositoryInterface
         return $order;
     }
 
+    public function confirm($id, $amount)
+    {
+        $order = Order::find($id);
+        $order->amount = $amount;
+        $order->is_confirmed = 1;
+        $order->save();
+        return $order;
+    }
+
     public function get($id)
     {
         return Order::where('id', $id)->with('services')->first();

@@ -9,9 +9,9 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <div class="card-header card-header-success">
-                                <h4 class="card-title ">Paid Orders</h4>
-                                <p class="card-category"> You and the Client have accepted this orders </p>
+                            <div class="card-header card-header-primary">
+                                <h4 class="card-title ">Pending Orders</h4>
+                                <p class="card-category"> Here are orders that are pending</p>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -56,7 +56,8 @@
                                                     {{$order->celebration_type}}
                                                 </td>
                                                 <td>
-                                                    <a href="" class="btn btn-facebook btn-sm">More... > </a>
+                                                    <a href="{{route('order',['id'=>$order->id])}}"
+                                                       class="btn btn-facebook btn-sm">More... > </a>
                                                 </td>
                                             </tr>
                                         @endforeach

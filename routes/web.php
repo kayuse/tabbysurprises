@@ -25,6 +25,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/orders/pending', 'OrderController@pending')->name('orders.pending');
     Route::get('/orders/accepted', 'OrderController@accepted')->name('orders.accepted');
     Route::get('/orders/rejected', 'OrderController@rejected')->name('orders.rejected');
+    Route::post('order/confirm', 'OrderDetailController@confirm')->name('order.confirm');
     Route::get('/orders/paid', 'OrderController@paid')->name('orders.paid');
     Route::get('/orders/completed', 'OrderController@completed')->name('orders.completed');
+    Route::get('/order/{id}', 'OrderDetailController@index')->name('order');
+    Route::post('/order/{id}', 'OrderDetailController@update')->name('order.update');
 });

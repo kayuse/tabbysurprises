@@ -33,6 +33,9 @@
                                             Celebration Type
                                         </th>
                                         <th>
+                                            Amount
+                                        </th>
+                                        <th>
                                             Action
                                         </th>
 
@@ -55,8 +58,12 @@
                                                 <td class="text-primary">
                                                     {{$order->celebration_type}}
                                                 </td>
+                                                <td class="text-primary">
+                                                    ₦{{number_format($order->amount)}}
+                                                </td>
                                                 <td>
-                                                    <a href="" class="btn btn-facebook btn-sm">More... > </a>
+                                                    <a href="{{route('order',['id'=>$order->id])}}"
+                                                       class="btn btn-facebook btn-sm">More... > </a>
                                                 </td>
                                             </tr>
                                         @endforeach
