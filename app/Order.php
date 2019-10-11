@@ -21,6 +21,11 @@ class Order extends Model
         return $this->belongsToMany('App\Service', 'order_services');
     }
 
+    public function formattedCelebrationTime()
+    {
+        return "hi";
+    }
+
     public function client()
     {
         return $this->belongsTo(Client::class);

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Repositories;
 
 use App\Client;
+use App\Events\OrderBooked;
 use App\Order;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Events\OrderStatusChanged;
 
 class OrderRepository implements OrderRepositoryInterface
 {
@@ -39,7 +41,7 @@ class OrderRepository implements OrderRepositoryInterface
         ]);
         $services = $orderData['services'];
         $order->services()->attach($services);
-
+        event(new OrderBooked($order));
         return $order;
     }
 
@@ -48,7 +50,9 @@ class OrderRepository implements OrderRepositoryInterface
         $order = Order::find($id);
         $order->amount = $amount;
         $order->is_confirmed = 1;
+
         $order->save();
+        event(new OrderStatusChanged($order));
         return $order;
     }
 
